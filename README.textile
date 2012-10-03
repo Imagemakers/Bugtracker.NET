@@ -1,0 +1,19 @@
+h1. BugTracker.NET
+
+This is a fork of "BugTracker.NET":http://ifdefined.com/bugtrackernet.html created by Corey Trager.
+
+This fork has "Windows Identity Foundation":http://msdn.microsoft.com/en-us/security/aa570351.aspx (WIF) implemented to allow easy access for employees to use Active Directory Federated Services.
+
+h2. Requirements/Installation
+
+This application uses .NET 4.5. You can install it from Windows Update, or the "http://go.microsoft.com/fwlink/?LinkId=225704":stand alone installer.
+
+You'll want to follow the instructions from "http://ifdefined.com/README.html":http://ifdefined.com/README.html to get this installed and running. The application allows you to use the local user database to authenticate users that may not be apart of the a federated identity service.
+
+If you're unfamiliar with WIF, and how to handle the workflow of authentication, you'll probably want to read up on it at "MSDN":http://blogs.msdn.com/b/vbertocci/archive/2010/06/23/all-will-be-revealed-7-hours-recordings-from-the-wif-workshops.aspx
+
+If you're developing locally, there's a LocalSTS in the root folder which can simulate ADFS locally. This application came from the WIF framework. This allows a developer to test against a STS without needing to have a lot of knowledge about WIF and the innerworkings. Just run "! RUN.bat" as an administrator to get it off the ground. It will run on port 8080. Word of warning, be sure you have your production databsae locked down. This can be used to gain unauthorized access to a user account.
+
+h2. Why did you do this? BugTracker.NET already had Kerboes and LDAP support!
+
+Our company has a lot of internal web based systems, all with different identity systems. We knew we needed to unify them to reduce password fatigue, and make management easier. LDAP would've solved that requirement, but we also noticed our employees getting tired of all the login forms for each application, so we introduced ADFS as a solution.
