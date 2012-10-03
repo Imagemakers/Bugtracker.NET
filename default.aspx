@@ -210,8 +210,6 @@ Response.Write (Application["custom_logo"]);
 
 <div align="center">
 <table border=0><tr><td>
-    <a href="login_wif.aspx">Login using IM+ID</a>
-    </td></tr><tr><td>
 <form class=frm runat="server">
 	<table border=0>
 
@@ -262,7 +260,12 @@ Response.Write (Application["custom_logo"]);
 
 </span>
 
-</td></tr></table>
+</td></tr>
+<tr><td>
+    <a href="login_wif.aspx">Login using WIF</a>
+    </td></tr>
+
+</table>
 
 <% Response.Write (Application["custom_welcome"]); %>
 </div>
